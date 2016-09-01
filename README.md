@@ -50,9 +50,13 @@ var buttonConfig = {
   "btnClass": "special-btn-class", // optional
 };
 ```
+The optional `is-disabled` attribute allows for disabling the button, e.g. when a form is invalid.
+```javascript
+var buttonDisabled = form.$invalid || form.$pristine;
+```
 Markup:
 ```html
-<loader-button cfg="buttonConfig"></loader-button>
+<loader-button cfg="buttonConfig" is-disabled="buttonDisabled"></loader-button>
 ```
 
 #### Example Code

@@ -22,6 +22,13 @@ describe('DemoCtrl', function() {
     });
   });
 
+  describe('toggleDisabled', function() {
+    it('should toggle the disabled property between true/false', function() {
+      ctrl.toggleDisabled();
+      expect(ctrl.disabled).toBe(false);
+    });
+  });
+
   describe('loadWithMsgs', function() {
     beforeEach(function() {
       ctrl.loadWithMsgs();
@@ -67,6 +74,18 @@ describe('DemoCtrl', function() {
       $timeout.flush();
 
       expect(ctrl.buttonNoMsgConfig.isLoading).toBe(false);
+    });
+  });
+
+  describe('loadWithDisabled', function() {
+    it('should set the isLoading property correctly while loading', function() {
+      ctrl.loadWithDisabled();
+
+      expect(ctrl.buttonWithDisabledConfig.isLoading).toBe(true);
+
+      $timeout.flush();
+
+      expect(ctrl.buttonWithDisabledConfig.isLoading).toBe(false);
     });
   });
 

@@ -8,7 +8,8 @@
   function LoaderButton() {
     /**
      * <loader-button
-     *   cfg="configObject">
+     *   cfg="configObject"
+     *   is-disabled="invalid">
      * </loader-button>
      *
      * @param {object} cfg Contains all the state and view options
@@ -21,12 +22,14 @@
      * @param {string} cfg.failMsg (optional) The button text when isFail is true
      * @param {string} cfg.iconClass (optional) The css class for the icon
      * @param {string} cfg.btnClass (optional) The css class for the <button> element
+     * @param {boolean} isDisabled (optional) Additional ways to disable the button, i.e. form.$invalid
      */
     return {
       restrict: 'AE',
       replace: true,
       scope: {
         cfg: '=',
+        disabled: '=isDisabled'
       },
       templateUrl: 'views/loader/loaderButton.directive.html',
     };

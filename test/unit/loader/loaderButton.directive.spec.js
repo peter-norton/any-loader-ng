@@ -28,8 +28,9 @@ describe('<loader-button> directive', function() {
       failMsg: 'Failed :(',
       btnClass: 'special-btn-class',
     };
+    scope.buttonDisabled = false;
 
-    element = angular.element('<loader-button cfg="buttonConfig"></loader-button>');
+    element = angular.element('<loader-button cfg="buttonConfig" is-disabled="buttonDisabled"></loader-button>');
 
     compiled = $compile(element)(scope);
     scope.$digest();
@@ -53,6 +54,10 @@ describe('<loader-button> directive', function() {
 
     it('should get the btnClass string from parent', function() {
       expect(isoScope.cfg.btnClass).toBe('special-btn-class');
+    });
+
+    it('should get the disabled property from parent', function() {
+      expect(isoScope.disabled).toBe(false);
     });
   });
 });

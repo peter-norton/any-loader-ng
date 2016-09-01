@@ -48,6 +48,18 @@
       cfg="vm.buttonConfig">
     </loader-button>
     <button ng-click="vm.resetButtonConfig()">Reset</button>
+
+    <br>
+
+    <h4>With additional ways to disable:</h4>
+    <pre>vm.disabled: {{vm.disabled}}</pre>
+
+    <loader-button
+      ng-click="vm.loadWithDisabled()"
+      cfg="vm.buttonWithDisabledConfig"
+      is-disabled="vm.disabled">
+    </loader-button>
+    <button ng-click="vm.toggleDisabled()">Toggle Disabled</button>
   </section>
 
   <script src="js/vendor.js"></script>
